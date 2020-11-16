@@ -9,6 +9,8 @@ window.addEventListener("load", function() {
 document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video");
 	video.play();
+	var vol = document.querySelector("#volume").innerHTML = video.volume;
+
 });
 
 document.querySelector("#pause").addEventListener("click", function() {
@@ -38,6 +40,7 @@ document.querySelector("#skip").addEventListener("click", function() {
 document.querySelector("#mute").addEventListener("click", function() {
 	if (video.muted){
 		video.muted = false;
+		var vol = document.querySelector("#volume").innerHTML = 0%
 		console.log("Unmuted");
 	}
 	else {
