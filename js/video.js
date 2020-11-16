@@ -9,7 +9,7 @@ window.addEventListener("load", function() {
 document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video");
 	video.play();
-	var vol = document.querySelector("#volume").innerHTML = video.volume;
+	var vol = document.querySelector("#volume").innerHTML = video.volume * 100 + "%";
 
 });
 
@@ -40,11 +40,12 @@ document.querySelector("#skip").addEventListener("click", function() {
 document.querySelector("#mute").addEventListener("click", function() {
 	if (video.muted){
 		video.muted = false;
-		var vol = document.querySelector("#volume").innerHTML = 0%
+		var vol = document.querySelector("#volume").innerHTML = video.volume *100 + "%"
 		console.log("Unmuted");
 	}
 	else {
 		video.muted = true;
+		var vol = document.querySelector("#volume").innerHTML = "0%"
 		console.log("Muted");
 	}
 });
